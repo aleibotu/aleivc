@@ -2,7 +2,7 @@
 import {useAuth, UserButton} from "@clerk/nextjs";
 import Link from "next/link";
 
-export default async function Nav() {
+export default function Nav() {
     return (
         <div>
             <div className="bg-slate-800 shadow-sm">
@@ -33,7 +33,8 @@ export default async function Nav() {
                                 </svg>
                             </Link>
                         </div>
-                        <div className="flex items-center">
+                        <div className="flex items-center gap-4">
+                            <Link className="underline" href="/new"> inPainting </Link>
                             <Link className="underline" href="/generateImg"> images </Link>
                             <User/>
                         </div>
@@ -49,7 +50,7 @@ function User() {
     return (
         <>
             {isSignedIn ? <UserButton afterSignOutUrl="/"/> : (
-                <div className="space-y-1">
+                <div className="space-y-1 ">
                     <Link href="/sign-in">
                         <button
                             className="flex w-full px-4 py-2 text-base rounded-lg font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"

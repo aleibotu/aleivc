@@ -16,10 +16,8 @@ export default function RootLayout({children}) {
         <html lang="en">
             <ClerkProvider>
                 <body className={inter.className}>
-                <Suspense fallback={null}>
                     <Nav />
-                </Suspense>
-                <div className="px-6">
+                <div>
                     {children}
                 </div>
                 </body>
