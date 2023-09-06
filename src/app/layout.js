@@ -1,5 +1,4 @@
 import './globals.css'
-import {Suspense} from "react"
 import {Inter} from 'next/font/google'
 import {ClerkProvider} from '@clerk/nextjs'
 import Nav from './components/Nav'
@@ -16,10 +15,10 @@ export default function RootLayout({children}) {
         <html lang="en">
             <ClerkProvider>
                 <body className={inter.className}>
-                    <Nav />
-                <div>
-                    {children}
-                </div>
+                <Nav/>
+                    <div>
+                        {children}
+                    </div>
                 </body>
             </ClerkProvider>
         </html>
